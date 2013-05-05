@@ -1,0 +1,71 @@
+<!doctype html>
+<!--[if lte IE 6]> <html class="no-js ie6 ie67 ie678" lang="fr"> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7 ie67 ie678" lang="fr"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<title>Responsive mobile navigation</title>
+	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0">
+	<link rel="stylesheet" href="styles.css" media="all">
+</head>
+<body class="open-menu">
+	<div class="header">
+		<h1><a href="#">Mon menu JS</a></h1>
+	</div>
+	<nav role="navigation" id="navigation">
+		<ul id="n">
+			<li><a href="#">Salade</a></li>
+			<li><a href="#">Tomate</a></li>
+			<li><a href="#">Oignons</a></li>
+			<li><a href="#">Choucroute</a></li>
+			<li><a href="#">Bretzel</a></li>
+			<li><a href="#">Picon bière</a></li>
+		</ul>
+	</nav>
+	<section class="main">
+		<p>Avantages :</p>
+				<ul>
+					<li>compatibilité maximale (si JS est activé)</li>
+					<li>correspond au même événement sur desktop (clic) et sur mobile (touch / clic)</li>
+					<li>on peut refermer simplement le menu sur mobile en recliquant sur le bouton</li>
+					<li>on peut facilement cibler n’importe quel élément de la page</li>
+					<li>permet plusieurs sous-niveaux de menu</li>
+					<li>lorsque JavaScript est désactivé, le menu reste ouvert</li>
+				</ul>
+				<p>Inconvénients :</p>
+				<ul>
+					<li>nécessite un traitement JavaScript par le navigateur</li>
+					<li>on discerne un temps de latence durant lequel le menu est affiché ouvert</li>
+					<li>nécessite souvent d'implémenter des fonctionnalités / détections complémentaires qui complexifient le code initial (onresize, timeout, zoom utilisateur, etc.)</li>
+				</ul>
+				<p>Compatibilité :</p>
+		<ul>
+			<li>OK sur ordinateurs de bureau (IE10 minimum)</li>
+			<li>OK sur mobile : iOS 5+, Android 3+, Opera Mobile, Blackberry 6+, IE 10+, Firefox, Chrome</li>
+			<li>PAS OK sur Android 2.* ni Opera mini</li>
+			<li>OK avec le lecteur d'écran VoiceOver</li>
+		</ul>
+		<p>Lorem Elsass ipsum réchime amet non Choucroute knack  tchao bissame hopla. Wotch a kofee avec ton BibalaekaesSalat et ta wurscht ?</p>
+		<p>Yeuh non che suis au réchime, je ne mange plus que des Grumbeere light et che fais de la chym avec Chulien. Tiens, un Picon sur le comptoir. <br>Hopla vous savez que la mamsell Huguette, la miss Miss Dahlias du messti de Bischheim était au Christkindelsmärik en compagnie de Richard Schirmeck (celui qui a un blottkopf), le mari de Chulia Roberstau, qui lui trempait sa Nüdle dans sa Schneck ! Yo dû, Pfourtz ! Ch'espère qu'ils avaient du Kabinetpapier, Gal !</p>
+		<p>Allez tchao bissame !</p>
+	</section>
+
+	<script>
+		var n = document.getElementsByTagName('body')[0];
+		function init() {
+			n.classList.toggle('open-menu');
+			n.insertAdjacentHTML('afterBegin','<p id="toggle-menu"></p>');
+		}
+		function tgl(e){
+			t = document.getElementById(e);  
+			t.onclick=function(){ n.classList.toggle('open-menu'); }
+		}
+		if (window.innerWidth<641) { init(); }
+		tgl('toggle-menu');
+	</script>
+
+</body>
+
+</html>

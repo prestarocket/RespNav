@@ -1,0 +1,93 @@
+/* switching box model for all elements */
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+html {font-size: 62.5%;}
+body {
+	margin: 0;
+	background-color: #fff;
+	color: #000;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-size: 1.5em;
+	line-height: 1.5;
+}
+section p, .header {color: #fff; padding: .8em; margin: 0; background: hotpink}
+.header {background: #E0CDB1; color: #333}
+h1 {
+	margin: 0.5em 0;
+	font-size: 1.5em;
+}
+.header a {color: #333; text-decoration: none;}
+p+p {background: orange}
+p+p+p {background: maroon}
+section ul {margin: 0; padding: .8em 0 .8em 2em; background: #ddd;}
+
+nav:focus {
+	outline: none;
+	}
+nav ul {
+	margin: 0; padding: 0;
+	list-style: none;
+}
+nav a {
+	display: block;
+	padding: 0.8em;
+	background: #4A7377;
+	color: #fff;
+	text-decoration: none;
+}
+
+@media (max-width: 800px) {
+	
+	/* styling menu button */	
+	nav {cursor: pointer;}
+	nav:before {
+		content: "Menu \25BC"; 
+		display: block;
+		padding: .8em;
+		background: #2B4244;
+		color: #fff;
+	}
+	nav ul {		
+		max-height: 25em; /* number of items x5 */
+		overflow: hidden;
+		-webkit-transition: max-height .4s;
+		transition: max-height .4s;
+		-webkit-transform: translateZ(0); /* activating hardware acceleration */
+		-ms-transform: translateZ(0);
+		transform: translateZ(0);
+	}
+	nav a:hover, nav a:focus {
+		background: #3A6266;
+	}
+	nav a {
+		-webkit-tap-highlight-color:rgba(0,0,0,0);
+	}
+
+	/* handling clic and touch with CSS :focus */
+	nav:focus {
+		outline: none;
+	}
+	nav:not(:focus) ul {
+		max-height: 0;
+	}
+
+}
+
+/* orientation */
+@media (orientation: landscape) and (max-width: 768px) {
+	html,
+	body {
+		-webkit-text-size-adjust: 100%;
+	}
+	nav ul {
+		-webkit-columns: 2;
+		-moz-columns: 2;
+		columns: 2;
+		-webkit-column-gap: 1px;
+		-moz-column-gap: 1px;
+		column-gap: 1px;
+	}
+}

@@ -1,0 +1,112 @@
+/* switching box model for all elements */
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+html {font-size: 62.5%;}
+body {
+	margin: 0;
+	background-color: #fff;
+	color: #000;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-size: 1.5em;
+	line-height: 1.5;
+}
+section p, .header {color: #fff; padding: .8em; margin: 0; background: hotpink}
+.header {background: #E0CDB1; color: #333}
+h1 {
+	margin: 0.5em 0;
+	font-size: 1.5em;
+}
+.header a {color: #333; text-decoration: none;}
+p+p {background: orange}
+p+p+p {background: maroon}
+section ul {margin: 0; padding: .8em 0 .8em 2em; background: #ddd;}
+
+nav ul {
+	margin: 0; padding: 0;
+	list-style: none;
+}
+nav a {
+	display: block;
+	padding: 0.8em;
+	background: #4A7377;
+	color: #fff;
+	text-decoration: none;
+}
+
+@media (max-width: 640px) {
+	nav {
+		position: relative;
+		cursor: pointer;
+	}
+	nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;				
+	}
+	nav a {
+		display: block;
+		padding: 0.8em;
+		background: #4A7377;
+		color: #fff;
+		text-decoration: none;
+	}
+	nav a:hover, nav a:focus {
+		background: #3A6266;
+	}
+	nav a {
+		-webkit-tap-highlight-color:rgba(0,0,0,0);
+	}
+
+	/* styling menu button */	
+	nav:after {
+		content: "Menu \25BC";
+		position: absolute;
+		top: -4rem; right: 0;
+		height: 4rem; line-height: 4rem;
+		padding: 0 1rem;
+		background: #222;
+		color: #fff;
+		border-radius: 12px 0 0 0;
+	}
+
+	/* And.... Action ! */
+	#navigation ul {
+		max-height: 0;
+		overflow: hidden;
+		/* translate with hardware acceleration */
+		-webkit-transform: translate3d(0,0,0); 
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		-webkit-transition: max-height .4s;
+		transition: max-height .4s;
+	}
+	#navigation.open-menu ul{
+		max-height: 25em;
+	}
+
+}
+
+/* orientation */
+@media (orientation: landscape) and (max-device-width: 768px) {
+	html,
+	body {
+		-webkit-text-size-adjust: 100%;
+	}
+}
+
+pre {
+	-moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    padding: 1em;
+    margin: auto 1em;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,.1);
+    background: rgba(255,255,255,.6);
+    white-space: pre-wrap;
+	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
+	line-height: 1em;
+}

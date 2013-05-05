@@ -1,0 +1,114 @@
+/* switching box model for all elements */
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+html {font-size: 62.5%;}
+body {
+	margin: 0;
+	background-color: #fff;
+	color: #000;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-size: 1.5em;
+	line-height: 1.5;
+}
+section p {color: #fff; padding: .8em; margin: 0; background: hotpink}
+.header {background: #E0CDB1; color: #333}
+h1 {
+	margin: 0;
+	padding: .2em;
+	font-size: 1.5em;
+	text-align: left;
+}
+.header a {color: #333; text-decoration: none;}
+p+p {background: orange}
+p+p+p {background: maroon}
+section ul {margin: 0; padding: .8em 0 .8em 2em; background: #ddd;}
+
+nav {
+	background: #000;
+}
+nav input[type=checkbox] {
+	display: none; speak: none;
+}
+nav ul {
+	margin: 0; padding: 0;
+	list-style: none;
+}
+nav a {
+	display: block;
+	padding: 0.9em;
+	margin-bottom: 1px;
+	background: rgba(255,255,255,.05);
+	color: #fff;
+	text-decoration: none;
+}
+nav label, nav input {display: none;}
+
+@media (max-width: 640px) {
+
+	nav {
+		border-top: 2px solid #000;
+	}
+	nav ul {
+		max-height: 25em; /* number of items x5 */
+		margin: 0; padding: 0;
+		list-style: none;
+		-webkit-transition: max-height .4s;
+		transition: max-height .4s;
+		-webkit-transform: translateZ(0); /* activating hardware acceleration */
+		-ms-transform: translateZ(0);
+		transform: translateZ(0);
+		-webkit-columns: 2;
+		-moz-columns: 2;
+		columns: 2;
+		-webkit-column-gap: 1px;
+		-moz-column-gap: 1px;
+		column-gap: 1px;
+	}
+
+	/* styling menu button */	
+	nav label {
+		display: inline-block;
+		height: 2.6em;
+		float: right;
+		margin-top: -2.6em;
+		padding: 8px 10px 0 10px;
+		background: #000;
+		color: #fff;
+		cursor: pointer;
+		border-radius: 16px 0 0 0;
+	}
+	nav label:after {content: "Menu \25BC"}
+
+	nav a {
+		display: block;
+		padding: 0.9em;
+		margin-bottom: 1px;
+		background: rgba(255,255,255,.05);
+		color: #fff;
+		text-decoration: none;
+	}
+	nav a:hover, nav a:focus {
+		background: rgba(255,255,255,.1);
+	}
+	nav a, nav label {
+		-webkit-tap-highlight-color:rgba(0,0,0,0);
+	}
+	
+	nav input:invalid + ul, nav input:not(:checked) + ul {
+		max-height: 0;
+		overflow: hidden;
+	}
+}
+
+
+/* orientation */
+@media (orientation: landscape) and (max-device-width: 768px) {
+	html,
+	body {
+		-webkit-text-size-adjust: 100%;
+	}
+	
+}

@@ -1,0 +1,106 @@
+/* switching box model for all elements */
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+html {font-size: 62.5%;}
+body {
+	margin: 0;
+	background-color: #fff;
+	color: #000;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-size: 1.5em;
+	line-height: 1.5;
+}
+section p {color: #fff; padding: .8em; margin: 0; background: hotpink}
+.header {background: #E0CDB1; color: #333}
+h1 {
+	margin: 0;
+	padding: .2em;
+	font-size: 1.5em;
+}
+.header a {color: #333; text-decoration: none;}
+p+p {background: orange}
+p+p+p {background: maroon}
+section ul {margin: 0; padding: .8em 0 .8em 2em; background: #ddd;}
+
+nav {
+	background: #000;
+}
+nav ul {
+	margin: 0; padding: 0;
+	list-style: none;
+}
+nav a {
+	display: block;
+	padding: 0.9em;
+	margin-bottom: 1px;
+	background: rgba(255,255,255,.05);
+	color: #fff;
+	text-decoration: none;
+}
+
+@media (max-width: 640px) {
+	html {
+		background: #000;
+	}
+	body {
+		position: relative;
+		z-index: 2;
+		-webkit-transition: margin-top .4s;
+		-moz-transition: margin-top .4s;
+		transition: margin-top .4s;
+	}
+	nav {
+		position: fixed;	
+		top: 0; left: 0; right: 0;
+		z-index: -1;
+	}
+	nav ul {
+		-webkit-columns: 2;
+		-moz-columns: 2;
+		columns: 2;
+		-webkit-column-gap: 1px;
+		-moz-column-gap: 1px;
+		column-gap: 1px;
+	}
+	nav a {
+		-webkit-tap-highlight-color:rgba(0,0,0,0);
+	}
+
+	/* styling menu button */	
+	#toggle-menu {
+		cursor: pointer;
+		position: absolute;
+		top: 0; right: 6px;
+		z-index: 42;
+		margin: 0;
+		font-size: 24px; 
+		display: inline-block;
+		padding: .05em .5em .1em;
+		background: #000;
+		color: #fff;
+		border-radius: 0 0 4px 4px;
+	}
+	#toggle-menu:after {
+		content: "\25BC";		
+	}
+	nav a:hover, nav a:focus {
+		background: rgba(255,255,255,.1);
+	}	
+		
+	.close-menu {margin-top: 0;}
+	.open-menu {margin-top: 10em;}
+
+}
+
+
+/* orientation */
+@media (orientation: landscape) and (max-device-width: 768px) {
+	html,
+	body {
+		-webkit-text-size-adjust: 100%;
+	}
+	
+}

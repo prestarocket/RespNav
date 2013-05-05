@@ -1,0 +1,56 @@
+<!doctype html>
+<!--[if lte IE 6]> <html class="no-js ie6 ie67 ie678" lang="fr"> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7 ie67 ie678" lang="fr"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<title>Responsive mobile navigation</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css" media="all">
+</head>
+<body>
+	<div class="header">
+		<h1><a href="#">Mon menu :focus</a></h1>
+	</div>
+	<nav role="navigation" onclick="" tabindex="0">
+		<ul>
+			<li><a href="#">Salade</a></li>
+			<li><a href="#">Tomate</a></li>
+			<li><a href="#">Oignons</a></li>
+			<li><a href="#">Choucroute</a></li>
+			<li><a href="#">Picon bière</a></li>
+		</ul>
+	</nav>
+	<section class="main">
+		<p>Avantages :</p>
+			<ul>
+				<li>compatibilité relativement importante</li>
+				<li>simple à mettre en place, quelques bidouilles HTML (onclick=”” pour certains navigateurs, et tabindex=”0” pour prendre le focus)</li>
+				<li>correspond au même événement sur desktop (clic) et sur mobile (touch / clic)</li>
+				<li>pas de requête et traitement JS nécessaire</li>
+			</ul>
+			<p>Inconvénients :</p>
+			<ul>
+				<li>pas reconnu par anciens smartphones (ex. Android 2.1 et 2.3)</li>
+				<li>on ne peut pas refermer simplement le menu sur mobile</li>
+				<li>pas de navigation possible au clavier</li>
+				<li>ne permet pas plusieurs sous-niveaux de menu</li>
+				<li>ciblage limité en CSS (on ne peut avoir d’action que sur un frère ou un enfant)</li>
+			</ul>
+			<p>Compatibilité :</p>
+		<ul>
+			<li>OK sur ordinateurs de bureau (important : ne fonctionne pas au clavier)</li>
+			<li>OK sur mobile : iOS 5+, Android 3+, Opera Mini, Opera Mobile, Blackberry 6+, IE 9+, Firefox, Chrome</li>
+			<li>Apparemment PAS OK sur Android 2.1 et 2.3 sur navigateur natif. PAS OK sur Dolphin Browser sur HTC.</li>
+			<li>OK avec le lecteur d'écran VoiceOver</li>
+			<li><a href="http://www.quirksmode.org/css/selectors/mobile.html">Compatibilité mobile de :focus</a></li>
+		</ul>
+		<p>Lorem Elsass ipsum réchime amet non Choucroute knack  tchao bissame hopla. Wotch a kofee avec ton BibalaekaesSalat et ta wurscht ?</p>
+		<p>Yeuh non che suis au réchime, je ne mange plus que des Grumbeere light et che fais de la chym avec Chulien. Tiens, un Picon sur le comptoir. <br>Hopla vous savez que la mamsell Huguette, la miss Miss Dahlias du messti de Bischheim était au Christkindelsmärik en compagnie de Richard Schirmeck (celui qui a un blottkopf), le mari de Chulia Roberstau, qui lui trempait sa Nüdle dans sa Schneck ! Yo dû, Pfourtz ! Ch'espère qu'ils avaient du Kabinetpapier, Gal !</p>
+		<p>Allez tchao bissame !</p>
+	</section>
+	<div>→ <a style="display: inline-block; padding: 10px; color: #333" href="http://blog.goetter.fr/post/35270489019/creer-un-menu-de-navigation-mobile">Explications et méthodologie détaillée</a></div>
+</body>
+</html>
